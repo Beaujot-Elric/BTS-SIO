@@ -1,0 +1,28 @@
+BackLogs :
+
+- Faire la base de données
+- Faire le script de sauvegarde BD
+- Faire les pages MCV (decomposer)
+- Faire la présentation du cahier de suivi Agile
+- Faire le schéma d'enchaînement des écrans
+- Faire la structure applicative
+- Ajouter Bootstrap sur le MVC
+- Faire la charte graphique
+- AFFICHER LA LISTE DE MEDICAMENTS
+- Afficher les détails d'un médicaments et de tous les médicaments
+- Afficher les effets thérapeutiques et les effets secondaires
+- Interaction avec d'autres médicaments
+- S'inscrire, se désinscrire d'une activité (conférence)
+- Mettre les mentions juridiques nécessaires, le droit des images et les vérifier
+- Mettre une page juridique
+- Faire 2 triggers cote BD
+- Rédiger un rapport
+
+Sprint :
+
+- Afficher les détails d'un médicaments et de tous les médicaments
+- Créer, modifier, supprimer un médicament
+- Créer, modifier, supprimer et s'inscrire, se désinscrire d'une activité
+- Mettre une page juridique
+
+https://btssioagile.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-2

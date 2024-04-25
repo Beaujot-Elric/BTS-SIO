@@ -1,0 +1,66 @@
+CREATE TABLE Medicaments(
+   id INT,
+   nom VARCHAR(50),
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE Utilisateurs(
+   id VARCHAR(50),
+   nom VARCHAR(50),
+   prenom VARCHAR(50),
+   adresse_mail VARCHAR(50),
+   profession VARCHAR(50),
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE Activités(
+   id VARCHAR(50),
+   nom VARCHAR(50),
+   description VARCHAR(50),
+   date_activité DATE,
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE Effets_thérapeutiques(
+   id VARCHAR(50),
+   Descriptif VARCHAR(50),
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE Effets_secondaires(
+   id VARCHAR(50),
+   Descriptif VARCHAR(50),
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE rejoin(
+   id VARCHAR(50),
+   id_1 VARCHAR(50),
+   PRIMARY KEY(id, id_1),
+   FOREIGN KEY(id) REFERENCES Utilisateurs(id),
+   FOREIGN KEY(id_1) REFERENCES Activités(id)
+);
+
+CREATE TABLE comporte(
+   id INT,
+   id_1 VARCHAR(50),
+   PRIMARY KEY(id, id_1),
+   FOREIGN KEY(id) REFERENCES Medicaments(id),
+   FOREIGN KEY(id_1) REFERENCES Effets_thérapeutiques(id)
+);
+
+CREATE TABLE incompatibilité(
+   id INT,
+   id_1 INT,
+   PRIMARY KEY(id, id_1),
+   FOREIGN KEY(id) REFERENCES Medicaments(id),
+   FOREIGN KEY(id_1) REFERENCES Medicaments(id)
+);
+
+CREATE TABLE comtient(
+   id INT,
+   id_1 VARCHAR(50),
+   PRIMARY KEY(id, id_1),
+   FOREIGN KEY(id) REFERENCES Medicaments(id),
+   FOREIGN KEY(id_1) REFERENCES Effets_secondaires(id)
+);
