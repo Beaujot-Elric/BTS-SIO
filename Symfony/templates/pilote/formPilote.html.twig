@@ -1,0 +1,47 @@
+{# templates/pilote/formPilote.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if operation == "Ajout" %}
+        Ajout d'un pilote
+    {% else %}
+        {% if operation == "Modif" %}
+            Modification d'un pilote
+        {% else %}
+            Suppression d'un pilote
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% if operation == "Ajout" %}
+            <h1>Ajout d'un pilote</h1>
+        {% else %}
+            {% if operation == "Modif" %}
+                <h1>Modification d'un pilote</h1>
+            {% else %}
+                <h1>Suppression d'un pilote</h1>
+            {% endif %}
+        {% endif %}
+        <br />
+        <div class="row">
+            {{ form_start(form) }}
+            {# {{ form_row(form.id) }} #}
+            {{ form_row(form.nom) }}
+            {{ form_label(form.prenom, "Prénom") }}
+            {{ form_widget(form.prenom) }}
+            <br />
+            {{ form_label(form.points, "Nombre de points") }}
+            {{ form_widget(form.points) }}
+            <br />
+            {{ form_label(form.ecurie, "Ecurie actuel") }}
+            {{ form_widget(form.ecurie) }}
+            <br />
+            {{ form_end(form) }}
+        </div>
+        <br />
+        {# lien pour revenir à la liste des pilotes #}
+        <a href="{{ path('gestion_pilotes') }}">Annuler : Retour à la liste des pilotes</a>
+    </div>
+{% endblock %}

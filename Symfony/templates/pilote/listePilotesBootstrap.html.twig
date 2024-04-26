@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Pilotes{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Pilotes</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Écurie</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pilote in pilotes %}
+                    <tr>
+                        <th scope="row">{{ pilote.id }}</th>
+                        <td>{{ pilote.nom }}</td>
+                        <td>{{ pilote.prenom }}</td>
+                        <td>{{ pilote.points }}</td>
+                        <td>{{ pilote.ecurie }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{# templates/pilote/listePilotes.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Liste des pilotes
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des pilotes</h1>
+        {# mise en place du tableau #}
+        <table class="table table-bordered table-striped">
+            {# mise en place de la ligne de titre #}
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Points</th>
+                <th>Ecurie</th>
+                <th>Action 1</th>
+                <th>Action 2</th>
+            </tr>
+            {# affichage de chacune des lignes du tableau #}
+            {% for pilote in pilotes %}
+                {# affichage de la ligne courante #}
+                <tr>
+                    <td>{{ pilote.id }}</td>
+                    <td>{{ pilote.nom }}</td>
+                    <td>{{ pilote.prenom }}</td>
+                    <td>{{ pilote.points }}</td>
+                    <td>{{ pilote.ecurie}}</td>
+                    <td><a href="{{ path('modif_pilote', {'codeEmpAction':pilote.id}) }}">Modifier</a></td>
+                    <td><a href="{{ path('suppr_pilote', {'codeEmpAction':pilote.id}) }}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+            {# fin du tableau #}
+        </table>
+        <br /><br />
+        {# lien pour ajouter un pilote #}
+        <a href="{{ path('ajout_pilote') }}">Ajouter un pilote</a>
+    </div>
+{% endblock %}

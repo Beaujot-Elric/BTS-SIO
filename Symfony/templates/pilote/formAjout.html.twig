@@ -1,0 +1,26 @@
+{# templates/pilote/formAjout.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Saisie des informations d'un nouvel pilote</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ajout d'un pilote</h1><br />
+        <div class="row">
+            {{ form_start(form) }}
+            {{ form_row(form.nom) }}
+            {{ form_row(form.prenom) }}
+            {{ form_label(form.points, "Nombre de points") }}
+            {{ form_widget(form.points) }}
+            <br />
+            {{ form_label(form.ecurie, "Ecurie actuel") }}
+            {{ form_widget(form.ecurie) }}
+            <br />
+            {{ form_end(form) }}
+        </div>
+    </div>
+</body>
+</html>
